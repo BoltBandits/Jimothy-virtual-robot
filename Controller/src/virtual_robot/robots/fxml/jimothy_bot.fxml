@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.shape.Circle?>
+
+<!--
+  Jimothy visual: 75 x 75 px chassis = 18 x 18 in real robot.
+  Yellow body (goBILDA frame), four blue mecanum wheels, orange front-face
+  intake, gray shooter housing at back, red forward indicator strip.
+  Three green dots mark the odometry pod wheel locations
+  (left/right parallel ~6.13" out, center perpendicular 6.72" behind).
+-->
+<Group xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
+       fx:controller="virtual_robot.robots.classes.JimothyBot">
+    <children>
+        <!-- Chassis -->
+        <Rectangle arcHeight="6.0" arcWidth="6.0" fill="GOLD" height="75.0" stroke="BLACK"
+                   strokeType="INSIDE" width="75.0"/>
+
+        <!-- Mecanum wheels (front = top in this view) -->
+        <Rectangle fill="BLUE" height="18.0" stroke="BLACK" strokeType="INSIDE" width="9.0"
+                   x="0.0"  y="4.0"/>
+        <Rectangle fill="BLUE" height="18.0" stroke="BLACK" strokeType="INSIDE" width="9.0"
+                   x="66.0" y="4.0"/>
+        <Rectangle fill="BLUE" height="18.0" stroke="BLACK" strokeType="INSIDE" width="9.0"
+                   x="0.0"  y="53.0"/>
+        <Rectangle fill="BLUE" height="18.0" stroke="BLACK" strokeType="INSIDE" width="9.0"
+                   x="66.0" y="53.0"/>
+
+        <!-- Front-face intake band (orange) -->
+        <Rectangle fill="DARKORANGE" height="7.0" stroke="BLACK" strokeType="INSIDE"
+                   width="40.0" x="17.5" y="0.0"/>
+
+        <!-- Shooter housing (dark gray) -->
+        <Rectangle arcHeight="2.0" arcWidth="2.0" fill="DIMGRAY" height="18.0" stroke="BLACK"
+                   strokeType="INSIDE" width="30.0" x="22.5" y="55.0"/>
+
+        <!-- Forward indicator (red strip at the front) -->
+        <Rectangle fill="RED" height="3.0" stroke="BLACK" strokeType="INSIDE" width="12.0"
+                   x="31.5" y="0.0"/>
+
+        <!-- Odometry pod markers (small green circles) -->
+        <!-- Pod spacing 12.263" ~= 51 px, split +/- 25.5 px about center X=37.5 -->
+        <Circle centerX="12.0" centerY="37.5" fill="LIMEGREEN" radius="3.0" stroke="BLACK"
+                strokeType="INSIDE"/>
+        <Circle centerX="63.0" centerY="37.5" fill="LIMEGREEN" radius="3.0" stroke="BLACK"
+                strokeType="INSIDE"/>
+        <!-- Center pod ~6.72" behind center => 37.5 + 28 = 65.5 -->
+        <Circle centerX="37.5" centerY="65.5" fill="LIMEGREEN" radius="3.0" stroke="BLACK"
+                strokeType="INSIDE"/>
+    </children>
+</Group>
