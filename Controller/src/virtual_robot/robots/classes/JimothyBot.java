@@ -45,6 +45,18 @@ public class JimothyBot extends MecanumPhysicsBase {
     private DeadWheelEncoder rightPod;
     private DeadWheelEncoder centerPod;
 
+    // Accessors used by BioBuzzGame to read mechanism state during the physics
+    // tick (bypasses hardwareMap's active-flag guard).
+    private DcMotorEx     intakeMotorRef;
+    private DcMotorEx     shooterMotorRef;
+    private CRServoImpl   leftIntakeServoRef;
+    private CRServoImpl   rightIntakeServoRef;
+    private CRServoImpl   windmillServoRef;
+
+    public DcMotorEx     getIntakeMotorRef()  { return intakeMotorRef; }
+    public DcMotorEx     getShooterMotorRef() { return shooterMotorRef; }
+    public CRServoImpl   getWindmillServoRef(){ return windmillServoRef; }
+
     private double podWheelRadius;
     private double leftPodX;
     private double rightPodX;
@@ -97,6 +109,12 @@ public class JimothyBot extends MecanumPhysicsBase {
         leftPod   = hardwareMap.get(DeadWheelEncoder.class, "intake_motor");
         rightPod  = hardwareMap.get(DeadWheelEncoder.class, "odo_right");
         centerPod = hardwareMap.get(DeadWheelEncoder.class, "odo_center");
+
+        intakeMotorRef      = leftPod;  // intake_motor IS the LEFT pod encoder on this bot
+        shooterMotorRef     = hardwareMap.get(DcMotorEx.class, "shooter_motor");
+        windmillServoRef    = (CRServoImpl)   hardwareMap.crservo.get("windmill_servo");
+        leftIntakeServoRef  = (CRServoImpl)   hardwareMap.crservo.get("left_intake_servo");
+        rightIntakeServoRef = (CRServoImpl)   hardwareMap.crservo.get("right_intake_servo");
 
         podWheelRadius = 0.5 * POD_WHEEL_DIAMETER_INCHES * botWidth / 18.0;
         leftPodX   = LEFT_POD_X_INCHES   * botWidth / 18.0;

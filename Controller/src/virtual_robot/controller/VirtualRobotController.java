@@ -87,6 +87,7 @@ public class VirtualRobotController {
     // Virtual Hardware
     private HardwareMap hardwareMap = null;
     private VirtualBot bot = null;
+    public VirtualBot getBot() { return bot; }
     Gamepad gamePad1 = new Gamepad();
     Gamepad gamePad2 = new Gamepad();
     GamePadHelper gamePadHelper = null;
