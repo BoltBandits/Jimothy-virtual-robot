@@ -1,0 +1,15 @@
+title: BioBuzz Lab (Jimothy Virtual Twin)
+language: English
+summary: |-
+  A sub-course for students who finished Lessons 1-11 of the main FTC Coding
+  Lessons course. Picks up in the simulator with Jimothy's digital twin and
+  teaches game-scoring scenarios for the 2026-2027 BIOBUZZ season: driving
+  to targets, facing flowers, picking up pollen, launching into the hive,
+  parking in the garden. Code written here transfers to the physical Jimothy
+  by copy-paste.
+programming_language: Java
+programming_language_version: 17
+content:
+  - biobuzz-lab
+mode: Study
+yaml_version: 5

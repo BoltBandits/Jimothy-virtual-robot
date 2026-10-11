@@ -2,3 +2,8 @@ out/
 *.class
 .idea/vcs.xml
 .idea/workspace.xml
+# Student working area — each student's own OpModes stay local, so `git pull`
+# never conflicts with their work. The README is kept so the folder exists
+# after a fresh clone.
+TeamCode/src/org/firstinspires/ftc/teamcode/student/*
+!TeamCode/src/org/firstinspires/ftc/teamcode/student/README.md

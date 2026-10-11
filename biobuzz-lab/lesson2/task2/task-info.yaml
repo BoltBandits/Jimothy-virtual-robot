@@ -1,0 +1,7 @@
+type: theory
+custom_name: "Read the three pods"
+files:
+  - name: starter-code/MyBioBuzzLab.java
+    visible: true
+    learner_created: false
+status: Unchecked
