@@ -1,5 +1,7 @@
 package virtual_robot.robots.classes;
 
+import org.firstinspires.ftc.teamcode.RobotHookups;
+
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorExImpl;
 import virtual_robot.controller.BotConfig;
@@ -15,14 +17,14 @@ public class BigJBot extends MecanumPhysicsBase {
         super.createHardwareMap();
         shooter = new DcMotorExImpl(MOTOR_TYPE, motorController1, 1);
         feeder = new DcMotorExImpl(MOTOR_TYPE, motorController1, 2);
-        hardwareMap.put("shooter_motor", shooter);
-        hardwareMap.put("feeder_motor", feeder);
+        hardwareMap.put(RobotHookups.Names.SHOOTER, shooter);
+        hardwareMap.put(RobotHookups.Names.FEEDER, feeder);
         hardwareMap.setActive(true);
         try {
-            hardwareMap.put("left_front_drive", hardwareMap.get(DcMotor.class, "front_left_motor"));
-            hardwareMap.put("right_front_drive", hardwareMap.get(DcMotor.class, "front_right_motor"));
-            hardwareMap.put("left_back_drive", hardwareMap.get(DcMotor.class, "back_left_motor"));
-            hardwareMap.put("right_back_drive", hardwareMap.get(DcMotor.class, "back_right_motor"));
+            hardwareMap.put(RobotHookups.Names.FRONT_LEFT, hardwareMap.get(DcMotor.class, "front_left_motor"));
+            hardwareMap.put(RobotHookups.Names.FRONT_RIGHT, hardwareMap.get(DcMotor.class, "front_right_motor"));
+            hardwareMap.put(RobotHookups.Names.BACK_LEFT, hardwareMap.get(DcMotor.class, "back_left_motor"));
+            hardwareMap.put(RobotHookups.Names.BACK_RIGHT, hardwareMap.get(DcMotor.class, "back_right_motor"));
         } finally {
             hardwareMap.setActive(false);
         }

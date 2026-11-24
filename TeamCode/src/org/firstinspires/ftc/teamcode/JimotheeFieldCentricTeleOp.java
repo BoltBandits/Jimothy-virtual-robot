@@ -28,10 +28,10 @@ public class JimotheeFieldCentricTeleOp extends LinearOpMode {
 
     @Override
     public void runOpMode() {
-        frontLeft = hardwareMap.get(DcMotor.class, "left_front_drive");
-        frontRight = hardwareMap.get(DcMotor.class, "right_front_drive");
-        backLeft = hardwareMap.get(DcMotor.class, "left_back_drive");
-        backRight = hardwareMap.get(DcMotor.class, "right_back_drive");
+        frontLeft = hardwareMap.get(DcMotor.class, RobotHookups.Names.FRONT_LEFT);
+        frontRight = hardwareMap.get(DcMotor.class, RobotHookups.Names.FRONT_RIGHT);
+        backLeft = hardwareMap.get(DcMotor.class, RobotHookups.Names.BACK_LEFT);
+        backRight = hardwareMap.get(DcMotor.class, RobotHookups.Names.BACK_RIGHT);
         leftPod = hardwareMap.get(DcMotor.class, "intake_motor");
         rightPod = hardwareMap.get(DcMotor.class, "odo_right");
 

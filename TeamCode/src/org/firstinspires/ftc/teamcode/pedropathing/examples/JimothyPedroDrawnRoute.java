@@ -1,5 +1,7 @@
 package org.firstinspires.ftc.teamcode.pedropathing.examples;
 
+import org.firstinspires.ftc.teamcode.RobotHookups;
+
 import com.pedropathing.algorithm.Foresight;
 import com.pedropathing.api.Paths;
 import com.pedropathing.follower.Follower;
@@ -21,10 +23,10 @@ public class JimothyPedroDrawnRoute extends LinearOpMode {
     @Override
     public void runOpMode() throws InterruptedException {
         MecanumConfig drivetrain = new MecanumConfig(config -> {
-            config.frontLeftName.set("left_front_drive");
-            config.frontRightName.set("right_front_drive");
-            config.backLeftName.set("left_back_drive");
-            config.backRightName.set("right_back_drive");
+            config.frontLeftName.set(RobotHookups.Names.FRONT_LEFT);
+            config.frontRightName.set(RobotHookups.Names.FRONT_RIGHT);
+            config.backLeftName.set(RobotHookups.Names.BACK_LEFT);
+            config.backRightName.set(RobotHookups.Names.BACK_RIGHT);
             config.frontLeftDirection.set(Direction.REVERSE);
             config.backLeftDirection.set(Direction.REVERSE);
             config.frontRightDirection.set(Direction.FORWARD);

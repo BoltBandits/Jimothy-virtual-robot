@@ -1,5 +1,7 @@
 package virtual_robot.robots.classes;
 
+import org.firstinspires.ftc.teamcode.RobotHookups;
+
 import com.qualcomm.robotcore.hardware.CRServoImpl;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
@@ -78,10 +80,10 @@ public class JimothyBot extends MecanumPhysicsBase {
         DcMotor br = hardwareMap.get(DcMotorEx.class, "back_right_motor");
         hardwareMap.setActive(false);
 
-        hardwareMap.put("left_front_drive",  fl);
-        hardwareMap.put("right_front_drive", fr);
-        hardwareMap.put("left_back_drive",   bl);
-        hardwareMap.put("right_back_drive",  br);
+        hardwareMap.put(RobotHookups.Names.FRONT_LEFT,  fl);
+        hardwareMap.put(RobotHookups.Names.FRONT_RIGHT, fr);
+        hardwareMap.put(RobotHookups.Names.BACK_LEFT,   bl);
+        hardwareMap.put(RobotHookups.Names.BACK_RIGHT,  br);
 
         // Legacy "dancebot" aliases so DanceBot OpModes also run on this bot
         // (motor0=FR, motor1=BR, motor2=BL, motor3=FL, per dancebot.xml convention)
@@ -94,7 +96,7 @@ public class JimothyBot extends MecanumPhysicsBase {
         hardwareMap.put("odo_right",    new DeadWheelEncoder(MOTOR_TYPE, motorController1, 1));
         hardwareMap.put("odo_center",   new DeadWheelEncoder(MOTOR_TYPE, motorController1, 2));
 
-        hardwareMap.put("shooter_motor", new DcMotorExImpl(MOTOR_TYPE, motorController1, 3));
+        hardwareMap.put(RobotHookups.Names.SHOOTER, new DcMotorExImpl(MOTOR_TYPE, motorController1, 3));
 
         hardwareMap.put("left_intake_servo",  new CRServoImpl(720));
         hardwareMap.put("right_intake_servo", new CRServoImpl(720));
@@ -111,7 +113,7 @@ public class JimothyBot extends MecanumPhysicsBase {
         centerPod = hardwareMap.get(DeadWheelEncoder.class, "odo_center");
 
         intakeMotorRef      = leftPod;  // intake_motor IS the LEFT pod encoder on this bot
-        shooterMotorRef     = hardwareMap.get(DcMotorEx.class, "shooter_motor");
+        shooterMotorRef     = hardwareMap.get(DcMotorEx.class, RobotHookups.Names.SHOOTER);
         windmillServoRef    = (CRServoImpl)   hardwareMap.crservo.get("windmill_servo");
         leftIntakeServoRef  = (CRServoImpl)   hardwareMap.crservo.get("left_intake_servo");
         rightIntakeServoRef = (CRServoImpl)   hardwareMap.crservo.get("right_intake_servo");

@@ -19,10 +19,10 @@ import virtual_robot.games.BioBuzzScoreboard;
 public class MyBioBuzzLab extends LinearOpMode {
 
     // ---------------- CONFIG BLOCK (edit here if wiring changes) --------
-    private static final String LEFT_FRONT  = "left_front_drive";
-    private static final String RIGHT_FRONT = "right_front_drive";
-    private static final String LEFT_BACK   = "left_back_drive";
-    private static final String RIGHT_BACK  = "right_back_drive";
+    private static final String LEFT_FRONT  = RobotHookups.Names.FRONT_LEFT;
+    private static final String RIGHT_FRONT = RobotHookups.Names.FRONT_RIGHT;
+    private static final String LEFT_BACK   = RobotHookups.Names.BACK_LEFT;
+    private static final String RIGHT_BACK  = RobotHookups.Names.BACK_RIGHT;
     private static final String LEFT_POD    = "intake_motor";
     private static final String RIGHT_POD   = "odo_right";
     private static final String CENTER_POD  = "odo_center";
